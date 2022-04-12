@@ -1,5 +1,6 @@
 package com.gulsahozaltun.lottiee
 
+import android.content.Intent
 import android.graphics.drawable.Animatable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,21 +20,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-
         var button=findViewById<Button>(R.id.button)
 
-        button.setOnClickListener{
 
+        button.setOnClickListener{
             //setupAnim()
             showSuccessDialog()
         }
-
-
-
-
-
     }
 
 /*
@@ -62,7 +55,8 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 alertDialog.dismiss()
-                //requireView().findNavController()
+                var gecis=Intent(this@MainActivity,MainActivity2::class.java)
+                startActivity(gecis)
             }
         }
         timer.start()
